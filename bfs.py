@@ -50,7 +50,7 @@
 # if __name__ == '__main__':
 #     main()
 
-from utils.readfile_bfsdfs import readfile
+from utils.readfile import readfile
 from utils.graph import *
 
 def checkin(list, point):

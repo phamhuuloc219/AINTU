@@ -1,12 +1,11 @@
-from utils.readfile import read_adj
+from utils.readfile import read_adj, read_h
 from utils.checkin import exist
 from utils.graph import *
 
 
-def DFS(adj, start, stop):
+def hillClimSearch(adj, start, stop):
     OPEN = []   # tap cac dinh can xem xet
     CLOSE = []  # tap cac dinh da xet
-    Tn = []     # tap cac dinh ke voi dinh dang xet
     Parent = [-1]*n # mang co n phan tu, moi ptu co gia tri la 1
 
     # Khoi tao cac gia tri
@@ -16,7 +15,7 @@ def DFS(adj, start, stop):
 
     while len(OPEN) > 0:    # OPEN khac rong
         curr = OPEN.pop(0)     # lay ra tu dau OPEN
-        print(f"curr: {curr}")
+        print(f"Curr: {curr}")
 
         if curr == stop:
             print("Tim thay duong di ngan nhat")
@@ -43,19 +42,27 @@ def DFS(adj, start, stop):
         print(f"Tn: {Tn}")
         print(f"Parent: {Parent}")
 
-        # OPEN = OPEN + Tn    # Noi Tn vao sau OPEN: BFS
-        OPEN = Tn + OPEN      # Noi Tn vao sau OPEN: DFS
+        #Tn sort
+        Tn_sort = sorted(Tn, key=lambda x:h [x][1], reverse=False)
+        Tn = Tn_sort
+        print(f"Tn_sort:: {Tn}")
+
+        OPEN = Tn + OPEN
         print(f"OPEN: {OPEN}")
 
     print("Khong tim thay duong di")
 
 
 if __name__ == '__main__':
-    n, adj = read_adj('inputs/bfs.adj')
+    n, adj = read_adj('inputs/hillClim.adj')
+    h = read_h('inputs/hillClim.h')
     print(f"Number of nodes: {n}")
+
     for i in range(n):
         print(f"{adj[i]}")
 
-    DFS(adj, 0, 6)
+    hillClimSearch(adj, 0, 8)
+
     draw_graph(adj)
+
     draw_directed_graph(adj)
