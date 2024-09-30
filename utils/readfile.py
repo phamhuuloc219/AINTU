@@ -15,4 +15,15 @@ def read_adj(filename):
     return n, adj
 
 def read_h(filename):
-    pass
+    if not os.path.exists(filename):
+        print("File not found")
+        return None
+    # Nguoc lai
+    with open(filename, 'r') as f:
+        n = int(f.readline().strip())
+        h = []
+        for i in range(n):
+            line = list(map(int, f.readline().strip().split()))
+            h.append(line)
+
+    return h
