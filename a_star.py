@@ -23,7 +23,7 @@ def ASTAR(adj, start, stop):
         print(f"CLOSE: {CLOSE}")
 
         if curr == stop:
-            print(f"Tim thay duong di {start} -> {stop}")
+            print(f"Tìm thấy đường đi: {start} -> {stop}")
             path = []
             idx = stop
             while idx!= -1:
@@ -39,7 +39,7 @@ def ASTAR(adj, start, stop):
                     g[neighbor] = g[curr] + adj[curr][neighbor]
                     f[neighbor] = g[neighbor] + h[neighbor][1]
                     Parent[neighbor] = curr
-                else:   # neighbour thuoc ve OPEN hoac CLOSE
+                else:
                     g_new = g[curr] + adj[curr][neighbor]
                     f_new = g_new + h[neighbor][1]
                     print(f"g_new({neighbor}): {g_new}, f_new({neighbor}): {f_new}")
@@ -47,15 +47,13 @@ def ASTAR(adj, start, stop):
                     if f_new < f[neighbor]:
                         g[neighbor] = g_new
                         f[neighbor] = f_new
-                        print(f"cap nhat gia tri f({neighbor}), g({neighbor}):")
-                        Parent[neighbor] = curr # cap nhat lai Parent va khong dua vao Tn
+                        print(f"Cập nhật giá trị f({neighbor}), g({neighbor}):")
+                        Parent[neighbor] = curr
 
         print(f"Tn: {Tn}")
-        # Chen Tn vao dau OPEN
         OPEN = Tn + OPEN
         print(f"OPEN: {OPEN}")
 
-        # Sap xep OPEN tang dan theo f
         OPEN_sorted = sorted(OPEN, key=lambda x: f[x], reverse=False)
         OPEN = OPEN_sorted
         print(f"OPEN sorted: {OPEN}")
@@ -63,11 +61,9 @@ def ASTAR(adj, start, stop):
         print(f"f: {f}")
         print(f"Parent: {Parent}")
 
-        # Reset Tn
         Tn = []
 
-    # OPEN = 0
-    print(f"Khong tim thay duong di {start} -> {stop}")
+    print(f"Không tìm thấy đường đi: {start} -> {stop}")
 
 
 if __name__ == '__main__':
