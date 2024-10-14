@@ -77,5 +77,5 @@ if __name__ == '__main__':
 
     ASTAR(adj, 0, 6)
     # Ve do thi
-    # draw_graph(adj)
-    # draw_directed_graph(adj)
+    draw_graph(adj)
+    draw_directed_graph(adj)

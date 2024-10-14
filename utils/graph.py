@@ -16,7 +16,7 @@ def draw_graph(adj):
     # Them cac canh vao do thi cua ma tran ke
     for i in range(n):
         for j in range(i, n):
-            if adj[i][j] == 1:
+            if adj[i][j] != 0:
                 G.add_edge(labels[i], labels[j])
 
     # Ve do thi vo huong
@@ -40,7 +40,7 @@ def draw_directed_graph(adj):
     # Them cac canh tu cac dinh da co
     for i in range(n):
         for j in range(n):  # Trong đồ thị có hướng, xét tất cả các cặp (i, j)
-            if adj[i][j] == 1:
+            if adj[i][j] != 0:
                 G.add_edge(labels[i], labels[j])
 
     # Ve do thi co huong
