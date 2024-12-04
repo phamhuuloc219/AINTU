@@ -1,0 +1,62 @@
+path: ../../Image-Classification/playcards
+train: train
+val: valid
+
+nc: 53
+
+# Classes
+names:
+ 0: ace_of_clubs
+ 1: ace_of_diamonds
+ 2: ace_of_hearts
+ 3: ace_of_spades
+ 4: eight_of_clubs
+ 5: eight_of_diamonds
+ 6: eight_of_hearts
+ 7: eight_of_spades
+ 8: five_of_clubs
+ 9: five_of_diamonds
+ 10: five_of_hearts
+ 11: five_of_spades
+ 12: four_of_clubs
+ 13: four_of_diamonds
+ 14: four_of_hearts
+ 15: four_of_spades
+ 16: jack_of_clubs
+ 17: jack_of_diamonds
+ 18: jack_of_hearts
+ 19: jack_of_spades
+ 20: joker
+ 21: king_of_clubs
+ 22: king_of_diamonds
+ 23: king_of_hearts
+ 24: king_of_spades
+ 25: nine_of_clubs
+ 26: nine_of_diamonds
+ 27: nine_of_hearts
+ 28: nine_of_spades
+ 29: queen_of_clubs
+ 30: queen_of_diamonds
+ 31: queen_of_hearts
+ 32: queen_of_spades
+ 33: seven_of_clubs
+ 34: seven_of_diamonds
+ 35: seven_of_hearts
+ 36: seven_of_spades
+ 37: six_of_clubs
+ 38: six_of_diamonds
+ 39: six_of_hearts
+ 40: six_of_spades
+ 41: ten_of_clubs
+ 42: ten_of_diamonds
+ 43: ten_of_hearts
+ 44: ten_of_spades
+ 45: three_of_clubs
+ 46: three_of_diamonds
+ 47: three_of_hearts
+ 48: three_of_spades
+ 49: two_of_clubs
+ 50: two_of_diamonds
+ 51: two_of_hearts
+ 52: two_of_spades
+  
