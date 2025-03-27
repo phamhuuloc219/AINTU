@@ -11,9 +11,15 @@ with open("ML/models/tfidf_vectorizer.pkl", "rb") as vectorizer_file:
 
 print("Model và vectorizer đã được load thành công!")
 
+# def check_spam():
+#     email_text = email_input.value
+#     email_vector = tfvec.transform([email_text]).toarray()
+#     prediction = classifier.predict(email_vector)[0]
+#     result.value = "Spam!" if prediction == 1 else "Ham (Not Spam)"
+
 def check_spam():
-    email_text = email_input.value
-    email_vector = tfvec.transform([email_text]).toarray()
+    email_text = email_input.value.strip()
+    email_vector = tfvec.transform([email_text])
     prediction = classifier.predict(email_vector)[0]
     result.value = "Spam!" if prediction == 1 else "Ham (Not Spam)"
 
