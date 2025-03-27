@@ -2,14 +2,14 @@ from guizero import App, TextBox, PushButton, Text
 import pickle
 import numpy as np
 
-# Load mô hình đã lưu
-with open("spam_classifier.pkl", "rb") as model_file:
+
+with open("ML/models/spam_classifier.pkl", "rb") as model_file:
     classifier = pickle.load(model_file)
 
-# Load vectorizer đã lưu
-with open("tfidf_vectorizer.pkl", "rb") as vectorizer_file:
+with open("ML/models/tfidf_vectorizer.pkl", "rb") as vectorizer_file:
     tfvec = pickle.load(vectorizer_file)
 
+print("Model và vectorizer đã được load thành công!")
 
 def check_spam():
     email_text = email_input.value
