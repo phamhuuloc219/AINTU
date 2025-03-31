@@ -13,9 +13,12 @@
 
     pip install guizero
 
+###Cài đặt thư viện gdown
+
+    pip install gdown
 
 ### Tải file từ Google Drive (thay FILE_ID bằng ID thực tế của file bạn muốn tải):
-    pip install gdown
+
     gdown --id FILE_ID -O spam_classifier.pkl
     gdown --id FILE_ID -O tfidf_vectorizer.pkl
 
